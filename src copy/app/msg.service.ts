@@ -11,8 +11,14 @@ export class MsgService {
 
   constructor() { }
 
+  // getHeroes(): Observable<Hero[]> {
+  //   return of(HEROES);
+  // }
+
   getMsgs(): Observable<Msg[]> {
     return of(MSGS);
   }
-
+  // getMsgs(): Msg[] {
+  //   return MSGS;
+  // }
 }

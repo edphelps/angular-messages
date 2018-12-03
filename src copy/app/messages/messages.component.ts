@@ -12,13 +12,26 @@ import { MSGS } from '../mock-msgs';
 })
 export class MessagesComponent implements OnInit {
 
+  nextId = 3;
+  // msgs = [ ];
+  // msgs Msg[] = [
+  //   { id: 1,
+  //     subject: "one",
+  //     body: "all about one"},
+  //   { id: 2,
+  //     subject: "two",
+  //     body: "all about two"}
+  // ];
+
+  // msgs = MSGS;
+
   msgs: Msg[];
 
-  // msg: Msg = {
-  //   id: 1,
-  //   subject: 'Windstorm',
-  //   body: "about"
-  // };
+  msg: Msg = {
+    id: 1,
+    subject: 'Windstorm',
+    body: "about"
+  };
 
   newMsg: Msg = {
     id: 0,
@@ -33,6 +46,7 @@ export class MessagesComponent implements OnInit {
     this.newMsg.subject = '';
     this.newMsg.body = '';
   }
+
 
   getMsgs(): void {
     this.msgService.getMsgs()
