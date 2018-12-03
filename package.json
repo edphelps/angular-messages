@@ -10,8 +10,9 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "XXXpostinstall": "ng build --prod",
-    "XXpostinstall": "ng build --aot -prod"
-    "postinstall": "ng build —aot=prod"
+    "XXpostinstall": "ng build --aot -prod",
+    "YYpostinstall": "ng build —aot=prod",
+    "postinstall": "ng build --aot --prod"
   },
   "private": true,
   "dependencies": {
