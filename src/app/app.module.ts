@@ -21,12 +21,14 @@ import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
     FormsModule,
     HttpClientModule,
 
+    // REMOVE TO ALLOW CALLS TO GO TO REAL SERVER
+    // MUST ALSO CHANGE URL CONSTANTS IN MSG.SERVICE.TS
     // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
     // and returns simulated server responses.
     // Remove it when a real server is ready to receive requests.
-    HttpClientInMemoryWebApiModule.forRoot(
-      InMemoryDataService, { dataEncapsulation: false }
-    )
+    // HttpClientInMemoryWebApiModule.forRoot(
+    //   InMemoryDataService, { dataEncapsulation: false }
+    // )
   ],
   providers: [],
   bootstrap: [AppComponent]
