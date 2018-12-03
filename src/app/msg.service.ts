@@ -5,6 +5,10 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Msg } from './msg';
 import { MSGS } from './mock-msgs';
 
+const httpOptions = {
+  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+};
+
 @Injectable({
   providedIn: 'root'
 })
@@ -20,5 +24,10 @@ export class MsgService {
   getMsgs (): Observable<Msg[]> {
     return this.http.get<Msg[]>(this.msgsUrl)
   }
+
+  /** POST: add a new hero to the server */
+  addMsg (msg: Msg): Observable<Msg> {
+    return this.http.post<Msg>(this.msgsUrl, msg, httpOptions);
+}
 
 }

@@ -14,12 +14,6 @@ export class MessagesComponent implements OnInit {
 
   msgs: Msg[];
 
-  // msg: Msg = {
-  //   id: 1,
-  //   subject: 'Windstorm',
-  //   body: "about"
-  // };
-
   newMsg: Msg = {
     id: 0,
     subject: 'new subject',
@@ -28,8 +22,14 @@ export class MessagesComponent implements OnInit {
 
   onclickAdd() {
     console.log("Add");
-    // this.newMsg.id = this.nextId++;
-    // this.msgs.push(this.newMsg);
+
+    // this.msgService.addMsg({ name } as Msg)
+    this.msgService.addMsg(this.newMsg)
+      .subscribe(msg => {
+        console.log("added: ", msg);
+        this.msgs.push(msg);
+      });
+
     this.newMsg.subject = '';
     this.newMsg.body = '';
   }
