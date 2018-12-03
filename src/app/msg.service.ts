@@ -15,29 +15,10 @@ export class MsgService {
   //   return of(HEROES);
   // }
 
-  getMsgs(): Msg[] {
-    return MSGS;
+  getMsgs(): Observable<Msg[]> {
+    return of(MSGS);
   }
-
-  // getMsgs(): Observable<Msg[]> {
-  //   return of([
-  //     { id: 1,
-  //       subject: "one",
-  //       body: "all about one"},
-  //     { id: 2,
-  //       subject: "two",
-  //       body: "all about two"}
-  //   ]);
-  // }
-
-  // getMsgs() {
-  //   return [
-  //     { id: 1,
-  //       subject: "one",
-  //       body: "all about one"},
-  //     { id: 2,
-  //       subject: "two",
-  //       body: "all about two"}
-  //   ];
+  // getMsgs(): Msg[] {
+  //   return MSGS;
   // }
 }

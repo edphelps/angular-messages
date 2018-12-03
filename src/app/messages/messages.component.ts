@@ -47,8 +47,10 @@ export class MessagesComponent implements OnInit {
     this.newMsg.body = '';
   }
 
+
   getMsgs(): void {
-    this.msgs = this.msgService.getMsgs();
+    this.msgService.getMsgs()
+      .subscribe(msgs => this.msgs = msgs);
   }
 
   constructor(private msgService: MsgService) {
