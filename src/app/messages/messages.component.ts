@@ -23,9 +23,9 @@ export class MessagesComponent implements OnInit {
   //     body: "all about two"}
   // ];
 
-  msgs = MSGS;
+  // msgs = MSGS;
 
-  // msgs = Msg[];
+  msgs: Msg[];
 
   msg: Msg = {
     id: 1,
@@ -47,15 +47,15 @@ export class MessagesComponent implements OnInit {
     this.newMsg.body = '';
   }
 
-  // getMsgs(): void {
-  //   this.msgs = this.msgService.getMsgs();
-  // }
+  getMsgs(): void {
+    this.msgs = this.msgService.getMsgs();
+  }
 
-  // constructor(private msgService: MsgService) {
-  // }
+  constructor(private msgService: MsgService) {
+  }
 
   ngOnInit() {
-    // this.getMsgs();
+    this.getMsgs();
   }
 
 }
