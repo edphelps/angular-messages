@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-// import { Msg } from '../msg';
+
+import { MsgService } from '../msg.service';
 
 @Component({
   selector: 'app-messages',
@@ -9,19 +10,12 @@ import { Component, OnInit } from '@angular/core';
 export class MessagesComponent implements OnInit {
 
   nextId = 3;
-  msgs = [
-    { id: 1,
-      subject: "one",
-      body: "all about one"},
-    { id: 2,
-      subject: "two",
-      body: "all about two"}
-  ]
+  msgs = [ ];
 
   newMsg = {
-    // id: 1,
-    subject: 'what its about',
-    body: 'this is the message'
+    id: 0,
+    subject: 'new subject',
+    body: 'new message'
   };
 
   onclickAdd() {
@@ -32,15 +26,15 @@ export class MessagesComponent implements OnInit {
     this.newMsg.body = '';
   }
 
-  // msg: Msg = {
-  //   id: 1,
-  //   subject: 'what its about',
-  //   body: 'this is the message'
-  // };
+  getMsgs(): void {
+    this.msgs = this.msgService.getMsgs();
+  }
 
-  constructor() { }
+  constructor(private msgService: MsgService) {
+  }
 
   ngOnInit() {
+    this.getMsgs();
   }
 
 }
