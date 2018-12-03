@@ -22,7 +22,10 @@ export class MessagesComponent implements OnInit {
   //     subject: "two",
   //     body: "all about two"}
   // ];
+
   msgs = MSGS;
+
+  // msgs = Msg[];
 
   msg: Msg = {
     id: 1,
